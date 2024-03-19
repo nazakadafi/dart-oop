@@ -1,0 +1,115 @@
+1. Bagaimana cara membuat project Flutter menggunakan terminal/cmd?
+flutter create nama_project
+cd nama_project
+
+2. Apa aturan dalam memberikan nama project pada Flutter?
+Dalam memberikan nama project pada Flutter sebaiknya mengikuti konvensi camelCase dan hindari karakter khusus atau spasi.
+
+3. Apa saja folder yang secara khusus disiapkan oleh Flutter untuk menjalankan aplikasi pada platform tertentu?
+android: Untuk proyek Android.
+ios: Untuk proyek iOS.
+lib: Tempat untuk kode Dart utama.
+test: Tempat untuk unit tests.
+
+4. Apa fungsi dari folder .dart_tools dan .idea?
+Folder .dart_tools berisi konfigurasi alat pengembangan Dart, sedangkan folder .idea adalah folder proyek IntelliJ IDEA yang menyimpan pengaturan proyek.
+
+5. Bagaimana cara membuka project Flutter menggunakan Visual Studio Code?
+Buka terminal/cmd, navigasikan ke direktori project, dan jalankan perintah: "code ."
+
+6. Mengapa kita perlu memastikan Android SDK terinstall untuk menjalankan aplikasi Flutter di sistem operasi Android?
+karena Flutter memerlukan SDK ini untuk mengompilasi dan menjalankan kode pada platform tersebut.
+
+7. Apa langkah-langkah untuk mengatasi masalah "Android Toolchain error" pada perintah flutter doctor?
+Memastikan bahwa Android Studio dan Android SDK terinstal.
+Memastikan bahwa path SDK Android terkonfigurasi dengan benar.
+Menjalankan Android Studio, membuka SDK Manager, dan menginstal komponen yang diperlukan.
+
+8. Bagaimana cara menambahkan Android SDK Command-line tools melalui Android Studio?
+Buka Android Studio.
+Buka SDK Manager.
+Pilih tab "SDK Tools".
+Centang "Android SDK Command-line tools".
+Klik "Apply" untuk menginstal.
+
+9. Apa fungsi dari file .gitignore dalam struktur folder Flutter?
+File .gitignore digunakan untuk mengabaikan file atau folder tertentu saat menggunakan Git, sehingga dapat mengabaikan file yang tidak perlu di-commit.
+
+10. Mengapa file pubspec.yaml sangat penting dalam pengembangan aplikasi Flutter?
+File pubspec.yaml sangat penting karena berisi dependensi, konfigurasi proyek, dan informasi lain yang diperlukan untuk menjalankan aplikasi.
+
+11. Apa yang dimaksud dengan widget dalam konteks Flutter?
+widget adalah elemen dasar dari antarmuka pengguna. Mereka membentuk struktur UI dan mengontrol perilaku aplikasi.
+
+12. Bagaimana pewarisan (inheritance) digunakan dalam pembuatan widget Flutter?
+Pewarisan (inheritance) dalam pembuatan widget Flutter digunakan untuk membuat widget baru berdasarkan widget yang sudah ada, memungkinkan penggunaan fitur yang sudah ada dan pengembangan lebih lanjut.
+
+13. Apa peran widget MaterialApp dalam pembuatan aplikasi Flutter?
+Widget MaterialApp dalam pembuatan aplikasi Flutter berperan sebagai kontainer utama yang menyediakan beberapa konfigurasi aplikasi dan mengatur tema dan navigasi.
+
+14. Mengapa kita membutuhkan fungsi runApp untuk menjalankan aplikasi Flutter?
+Fungsi runApp digunakan untuk memasangkan widget ke dalam pohon widget utama dan memulai aplikasi Flutter.
+
+15. Apa kegunaan widget Scaffold dalam struktur aplikasi Flutter?
+Widget Scaffold digunakan sebagai kerangka umum untuk halaman atau tata letak aplikasi Flutter. Ia menyediakan elemen-elemen dasar seperti app bar, body, dan floating action button.
+
+16. Bagaimana cara menambahkan app bar dan body pada widget Scaffold?
+Untuk menambahkan app bar dan body pada widget Scaffold, Anda dapat mengatur properti appBar dan body seperti contoh berikut:
+Scaffold(
+  appBar: AppBar(
+    title: Text('Judul App Bar'),
+  ),
+  body: Center(
+    child: Text('Isi Body'),
+  ),
+)
+
+
+17. Apa perbedaan antara Stateless Widget dan Stateful Widget?
+Stateless Widget adalah widget yang tidak dapat diubah setelah dibuat, sedangkan Stateful Widget dapat diubah selama waktu berjalannya aplikasi.
+
+18. Mengapa Stateful Widget disebut memiliki state internal?
+Stateful Widget disebut memiliki state internal karena dapat menyimpan dan memodifikasi data yang diperlukan selama siklus hidup widget.
+
+19. Berikan contoh penggunaan Stateless Widget dalam pembuatan aplikasi Flutter.
+Contoh penggunaan Stateless Widget:
+class ContohWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text('Halo, ini contoh Stateless Widget'),
+    );
+  }
+}
+
+20. Berikan contoh penggunaan Stateful Widget dalam pembuatan aplikasi Flutter beserta alasan penggunaannya.
+Contoh penggunaan Stateful Widget:
+class ContohWidget extends StatefulWidget {
+  @override
+  _ContohWidgetState createState() => _ContohWidgetState();
+}
+
+class _ContohWidgetState extends State<ContohWidget> {
+  int counter = 0;
+
+  void incrementCounter() {
+    setState(() {
+      counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text('Nilai Counter: $counter'),
+        ElevatedButton(
+          onPressed: incrementCounter,
+          child: Text('Tambah Counter'),
+        ),
+      ],
+    );
+  }
+}
+
+Alasan penggunaan Stateful Widget adalah untuk mengelola state (misalnya, data yang berubah) dan menyegarkan tampilan ketika state berubah.
